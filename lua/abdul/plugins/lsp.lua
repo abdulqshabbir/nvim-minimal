@@ -23,6 +23,10 @@ return {
 			opts.desc = "Smart rename"
 			keymap.set("n", "<leader>rn", vim.lsp.buf.rename, opts)
 
+      -- most important
+			opts.desc = "Show LSP definitions"
+			keymap.set("n", "gd", "<cmd>Telescope lsp_definitions<CR>", opts) -- show lsp definitions
+
 			-- see code actions
 			opts.desc = "See available code actions"
 			keymap.set({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, opts) -- see available code actions, in visual mode will apply to selection
@@ -34,6 +38,14 @@ return {
 			keymap.set("n", "yp", vim.diagnostic.goto_prev, opts) -- jump to previous diagnostic in buffer
 			opts.desc = "Go to next diagnostic"
 			keymap.set("n", "yn", vim.diagnostic.goto_next, opts) -- jump to next diagnostic in buffer
+
+      -- documentation
+			opts.desc = "Show documentation for what is under cursor"
+			keymap.set("n", "K", vim.lsp.buf.hover, opts) -- show documentation for what is under cursor
+
+      -- restart lsp
+			opts.desc = "Restart LSP"
+			keymap.set("n", "<leader>rs", ":LspRestart<CR>", opts) -- mapping to restart lsp if necessary
 
 			-- Change the Diagnostic symbols in the gutter
 			local signs = { Error = " ", Warn = " ", Hint = "󰠠 ", Info = " " }
