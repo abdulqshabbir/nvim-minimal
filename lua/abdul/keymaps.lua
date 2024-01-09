@@ -44,10 +44,12 @@ keymap.set("n", ";q", "<cmd>wqa<CR>")
 --keymap.set("n", "<leader>sm", ":MaximizerToggle<CR>") -- toggle split window maximization
 
 -- Git Keymaps
-keymap.set("n", "<leader>gtb", "<cmd>Gitsigns blame_line<cr>")
-keymap.set("n", "<leader>gsh", "<cmd>Gitsigns stage_hunk<cr>")
-keymap.set("n", "<leader>gph", "<cmd>Gitsigns preview_hunk<cr>")
+keymap.set("n", "<leader>ght", "<cmd>Gitsigns blame_line<cr>")
+keymap.set("n", "<leader>ghs", "<cmd>Gitsigns stage_hunk<cr>")
+keymap.set("n", "<leader>ghp", "<cmd>Gitsigns preview_hunk<cr>")
 keymap.set("n", "<leader>gwd", "<cmd>Gitsigns toggle_word_diff<cr>")
+keymap.set("n", "<leader>ghr", "<cmd>Gitsigns reset_hunk<cr>")
+keymap.set("n", "<leader>ghu", "<cmd>Gitsigns undo_stage_hunk<cr>")
 
 -- Quickfix keymaps
 keymap.set("n", "<leader>qn", ":cnext<CR>") -- jump to next quickfix list item
