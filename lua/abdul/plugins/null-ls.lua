@@ -34,6 +34,19 @@ return {
 				local keymap = vim.keymap
 				keymap.set("n", "<leader>F", function()
 					vim.lsp.buf.format({
+						filter = function(client)
+							--  only use null-ls for formatting instead of lsp server
+							return client.name == "null-ls"
+						end,
+						bufnr = bufnr,
+					})
+				end, opts)
+				keymap.set("n", ";k", function()
+					vim.lsp.buf.format({
+						filter = function(client)
+							--  only use null-ls for formatting instead of lsp server
+							return client.name == "null-ls"
+						end,
 						bufnr = bufnr,
 					})
 				end, opts)

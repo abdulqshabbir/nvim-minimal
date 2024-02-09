@@ -65,6 +65,7 @@ return {
 				"tsserver",
 				"graphql",
 				"emmet_ls",
+        "lua_ls",
 			},
 			handlers = {
 				lsp_zero.default_setup,
@@ -72,8 +73,8 @@ return {
 		})
 
 		-- custom setup for language servers
-		local lspconfig = require("lspconfig")
-		lspconfig.lua_ls.setup({})
+		-- local lspconfig = require("lspconfig")
+		-- lspconfig.lua_ls.setup({})
 
 		-- auto completion
 		local cmp = require("cmp")
