@@ -62,7 +62,7 @@ keymap.set("n", "<C-p>", ":cprev<CR>zz") -- jump to prev quickfix list item
 keymap.set("n", "<leader>u", ":UndotreeToggle<CR>")
 
 -- Telescope import
---keymap.set("n", "<leader>fi", "<cmd>Telescope import<cr>")
+keymap.set("n", "<leader>fi", "<cmd>Telescope import<cr>")
 
 -- Javascript interpreter
 --keymap.set("n", "<leader>repl", "<cmd>CodiNew javascript<cr>")
