@@ -7,6 +7,10 @@ return {
 		"hrsh7th/cmp-nvim-lsp",
 		"hrsh7th/nvim-cmp",
 		"L3MON4D3/LuaSnip",
+		"hrsh7th/cmp-buffer",
+		"hrsh7th/cmp-path",
+		"hrsh7th/cmp-cmdline",
+		"saadparwaiz1/cmp_luasnip",
 	},
 	config = function()
 		-- lsp zero setup
@@ -84,8 +88,19 @@ return {
 				-- Scroll up and down in the completion documentation
 				["<C-u>"] = cmp.mapping.scroll_docs(-4),
 				["<C-d>"] = cmp.mapping.scroll_docs(4),
-        ["<C-j>"] = cmp.mapping.select_next_item(),
-        ["<C-k>"] = cmp.mapping.select_prev_item(),
+				["<C-j>"] = cmp.mapping.select_next_item(),
+				["<C-k>"] = cmp.mapping.select_prev_item(),
+			}),
+			snippet = {
+				expand = function(args)
+					require("luasnip").lsp_expand(args.body)
+				end,
+			},
+			sources = cmp.config.sources({
+				{ name = "luasnip" }, -- For luasnip users.
+				{ name = "nvim_lsp" },
+			}, {
+				{ name = "buffer" },
 			}),
 		})
 	end,
