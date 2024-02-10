@@ -51,7 +51,6 @@ return {
 		keymap.set("n", "<leader>fb", "<cmd>Telescope buffers<cr>") -- list open buffers in current neovim instance
 		keymap.set("n", "<leader>ft", "<cmd>Telescope help_tags<cr>") -- list available help tags
 		keymap.set("n", "<leader>fr", "<cmd>Telescope lsp_references<cr>") -- find all references of variable
-		-- keymap.set("n", "<leader>fi", "<cmd>Telescope lsp_implementations<CR>") -- find all implementations
 		keymap.set("n", "<leader>fh", "<cmd>Telescope find_files hidden=true<cr>")
 		keymap.set("n", "<leader>fd", "<cmd>Telescope diagnostics bufnr=0<cr>") -- show diagnostics for current buffer
 		keymap.set("n", "<leader>fD", "<cmd>Telescope diagnostics<cr>") -- show diagnostics for all buffers
