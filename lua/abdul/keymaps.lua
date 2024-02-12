@@ -53,9 +53,7 @@ keymap.set("n", "<leader>guh", "<cmd>Gitsigns undo_stage_hunk<cr>")
 keymap.set("n", "<leader>gl", "<cmd>LazyGit<cr>")
 
 -- Quickfix keymaps
-keymap.set("n", "<leader>qn", ":cnext<CR>") -- jump to next quickfix list item
 keymap.set("n", "<C-n>", ":cnext<CR>zz") -- jump to next quickfix list item
-keymap.set("n", "<leader>qp", ":cprev<CR>") -- jump to prev quickfix list item
 keymap.set("n", "<C-p>", ":cprev<CR>zz") -- jump to prev quickfix list item
 
 -- undo tree
@@ -68,12 +66,6 @@ keymap.set("n", "<leader>fi", ":Telescope import<cr>")
 keymap.set({"n", "v"}, "<leader>sa", ":ScissorsAddNewSnippet<cr>")
 keymap.set("n", "<leader>sc", ":ScissorsEditSnippet<cr>")
 keymap.set("n", "<leader>ss", ":ScissorsSave<cr>")
-
--- Vinegar
-
-
--- Javascript interpreter
---keymap.set("n", "<leader>repl", "<cmd>CodiNew javascript<cr>")
 
 -- TS organize imports
 --keymap.set("n", "<leader>oi", "<cmd>OrganizeImports<cr>")
