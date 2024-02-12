@@ -62,7 +62,15 @@ keymap.set("n", "<C-p>", ":cprev<CR>zz") -- jump to prev quickfix list item
 keymap.set("n", "<leader>u", ":UndotreeToggle<CR>")
 
 -- Telescope import
-keymap.set("n", "<leader>fi", "<cmd>Telescope import<cr>")
+keymap.set("n", "<leader>fi", ":Telescope import<cr>")
+
+-- Snippets
+keymap.set({"n", "v"}, "<leader>sa", ":ScissorsAddNewSnippet<cr>")
+keymap.set("n", "<leader>sc", ":ScissorsEditSnippet<cr>")
+keymap.set("n", "<leader>ss", ":ScissorsSave<cr>")
+
+-- Vinegar
+
 
 -- Javascript interpreter
 --keymap.set("n", "<leader>repl", "<cmd>CodiNew javascript<cr>")

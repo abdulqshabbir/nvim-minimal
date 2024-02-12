@@ -1,0 +1,6 @@
+{
+  "useState (typescript)": {
+    "prefix": "useState (typescript)",
+    "body": "const [$1, $2] = useState($3);"
+  },
+}

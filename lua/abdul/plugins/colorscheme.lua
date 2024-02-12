@@ -14,6 +14,9 @@ return {
 		      autocmd VimEnter * hi DiffChange guifg=#CCCCCC guibg=#555555
 		      autocmd VimEnter * hi DiffText guifg=#00FF00 guibg=#005500
 	    	]])
+    -- Add custom highlights for Telescope matching selection
+    vim.cmd("hi link TelescopeMatching IncSearch")
+
 		-- vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
 		-- vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
 	end,

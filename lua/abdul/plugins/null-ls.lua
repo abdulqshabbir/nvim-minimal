@@ -1,8 +1,23 @@
 return {
 	"jose-elias-alvarez/null-ls.nvim",
 	event = { "BufReadPre", "BufNewFile" },
+  dependencies = {
+    "jay-babu/mason-null-ls.nvim",
+  },
 	config = function()
 		local null_ls = require("null-ls")
+    local mason_null_ls = require("mason-null-ls")
+
+    mason_null_ls.setup({
+      ensure_installed = {
+        "prettier", -- prettier formatter
+        "stylua", -- lua formatter
+        "black", -- python formatter
+        "pylint", -- python linter
+        "eslint_d", -- js linter
+      },
+    })
+
 		local null_ls_utils = require("null-ls.utils")
 		local formatting = null_ls.builtins.formatting -- to setup formatters
 		local diagnostics = null_ls.builtins.diagnostics -- to setup linters
@@ -13,7 +28,9 @@ return {
 			sources = {
 				--  to disable file types use
 				--  "formatting.prettier.with({disabled_filetypes: {}})" (see null-ls docs)
-				formatting.prettier, -- js/ts formatter
+				formatting.prettier.with({
+          extra_filetypes = { "tsx" },
+        }), -- js/ts formatter
 				formatting.stylua, -- lua formatter
 				diagnostics.eslint_d.with({ -- js/ts linter
 					condition = function(utils)
