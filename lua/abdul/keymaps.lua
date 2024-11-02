@@ -51,6 +51,7 @@ keymap.set("n", "<leader>gwd", "<cmd>Gitsigns toggle_word_diff<cr>")
 keymap.set("n", "<leader>grh", "<cmd>Gitsigns reset_hunk<cr>")
 keymap.set("n", "<leader>guh", "<cmd>Gitsigns undo_stage_hunk<cr>")
 keymap.set("n", "<leader>gl", "<cmd>LazyGit<cr>")
+keymap.set("n", "<leader>lg", "<cmd>LazyGit<cr>")
 
 -- Quickfix keymaps
 keymap.set("n", "<C-n>", ":cnext<CR>zz") -- jump to next quickfix list item
