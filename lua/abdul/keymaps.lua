@@ -8,6 +8,7 @@ local keymap = vim.keymap -- for conciseness
 
 -- file explorer
 keymap.set("n", "<leader>b", "<cmd>Ex<CR>")
+keymap.set("n", "<C-a>", "ggVGy")
 
 -- centering on jumps
 keymap.set("n", "<C-k>", "<cmd>cnext<CR>zz")
