@@ -2,12 +2,12 @@
 local group = vim.api.nvim_create_augroup("VCenterCursor", { clear = true })
 
 vim.api.nvim_create_autocmd(
-    {"BufEnter", "WinEnter", "WinNew", "VimResized"},
-    {
-        group = group,
-        pattern = {"*", "*.*"},
-        command = "let &scrolloff=(winheight(win_getid())/2) + 1",
-    }
+  { "BufEnter", "WinEnter", "WinNew", "VimResized" },
+  {
+    group = group,
+    pattern = { "*", "*.*" },
+    command = "let &scrolloff=(winheight(win_getid())/2) + 1",
+  }
 )
 
 
@@ -40,5 +40,6 @@ function fix_highlight()
     vim.wo.winhl = winhl .. ',DiffAdd:' .. override
   end
 end
+
 vim.cmd('autocmd ColorScheme * hi DiffAddAsDelete guibg=#f2e3cd')
 vim.cmd('autocmd BufNew fugitive://* lua fix_highlight()')

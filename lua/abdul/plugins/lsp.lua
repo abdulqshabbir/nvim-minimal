@@ -39,9 +39,9 @@ return {
       opts.desc = "Show line diagnostics"
       keymap.set("n", "<leader>yy", vim.diagnostic.open_float, opts) -- show diagnostics for line
       opts.desc = "Go to previous diagnostic"
-      keymap.set("n", "yp", vim.diagnostic.goto_prev, opts)       -- jump to previous diagnostic in buffer
+      keymap.set("n", "yp", vim.diagnostic.goto_prev, opts)          -- jump to previous diagnostic in buffer
       opts.desc = "Go to next diagnostic"
-      keymap.set("n", "yn", vim.diagnostic.goto_next, opts)       -- jump to next diagnostic in buffer
+      keymap.set("n", "<leader>n", vim.diagnostic.goto_next, opts)   -- jump to next diagnostic in buffer
 
       -- documentation
       opts.desc = "Show documentation for what is under cursor"
@@ -57,6 +57,19 @@ return {
         local hl = "DiagnosticSign" .. type
         vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
       end
+
+      -- remove unused imports
+      local function remove_unused_imports()
+        vim.lsp.buf.code_action({
+          apply = true,
+          context = {
+            only = { "source.removeUnusedImports.ts" },
+            diagnostics = {},
+          },
+        })
+      end
+
+      keymap.set("n", "<leader>r", remove_unused_imports, { desc = "Remove unused imports" })
     end)
     require("mason").setup({})
     require("mason-lspconfig").setup({
@@ -66,7 +79,7 @@ return {
         "lua_ls",
         "eslint",
         "tailwindcss",
-        "tsserver",
+        "ts_ls",
         "graphql",
         "emmet_ls",
         "lua_ls",
