@@ -2,7 +2,7 @@ return {
   "mfussenegger/nvim-lint",
   opts = {
     -- Event to trigger linters
-    events = { "InsertLeave" },
+    events = { "InsertLeave", "BufWritePost" },
     linters_by_ft = {
       fish = { "fish" },
       javascript = { "eslint_d" },
@@ -98,4 +98,3 @@ return {
     })
   end,
 }
-
