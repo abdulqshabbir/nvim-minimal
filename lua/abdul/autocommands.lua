@@ -42,4 +42,5 @@ function fix_highlight()
 end
 
 vim.cmd('autocmd ColorScheme * hi DiffAddAsDelete guibg=#f2e3cd')
+vim.cmd('hi StatusLine guibg=NONE')
 vim.cmd('autocmd BufNew fugitive://* lua fix_highlight()')
